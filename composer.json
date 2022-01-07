@@ -7,6 +7,6 @@
     "symfony/cache": "^5.3"
   },
   "autoload": {
-      "psr-0": {"": "src/"}
+       "psr-4": {"App\\Entity\\": "src/"}
   }
 }
