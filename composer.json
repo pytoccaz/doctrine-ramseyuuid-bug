@@ -1,9 +1,10 @@
 { 
-  "name": "doctrine2-tutorial",
   "description": "Mes premiers pas",
   "require": {
-      "doctrine/orm": "^2.6.2",
-      "symfony/yaml": "2.*"
+    "doctrine/orm": "^2.10.2",
+    "doctrine/dbal": "^3.1.1",
+    "symfony/yaml": "2.*",
+    "symfony/cache": "^5.3"
   },
   "autoload": {
       "psr-0": {"": "src/"}
