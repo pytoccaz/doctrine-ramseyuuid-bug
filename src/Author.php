@@ -3,17 +3,20 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @ORM\Entity 
  * @ORM\Table(name="author")
  */
 class Author
 {  
+    
+    // The error pops up when @JoinColumn name attribute is eq to the entity corresponding Id.
+    // With a different name (book_id here), everything is ok    
+    
     /**
-     * owning side 
      * @ORM\Id
      * @ORM\OneToOne(targetEntity="Book", inversedBy="author")
+     * @ORM\JoinColumn(name="book_id")  
      */
     protected $book;
 

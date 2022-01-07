@@ -1,12 +1,18 @@
 { 
-  "description": "Mes premiers pas",
+  "description": "a simple project for exposing doctrine+Ramsey uuid bug",
   "require": {
     "doctrine/orm": "^2.10.2",
     "doctrine/dbal": "^3.1.1",
     "symfony/yaml": "2.*",
-    "symfony/cache": "^5.3"
+    "symfony/cache": "^5.3",
+    "ramsey/uuid-doctrine": "^1.8"
   },
   "autoload": {
        "psr-4": {"App\\Entity\\": "src/"}
+  },
+  "scripts": {
+    "test": [
+        "php create_book.php"
+    ]
   }
 }

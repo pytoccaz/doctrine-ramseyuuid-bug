@@ -6,8 +6,8 @@ require_once "bootstrap.php";
 use App\Entity\Author;
 use App\Entity\Book;
 
-$title = $argv[1];
-$authorName = $argv[2] ?? null;
+$title = $argv[1] ?? "My book";
+$authorName = $argv[2] ?? "My author";
 
 
 
@@ -20,4 +20,6 @@ $entityManager->flush();
 
 echo "Your new Book Id: ".$book->getId()."\n";
 
+// the error pops up on refresh
 $entityManager->refresh($book);
+echo "Your new Book Entity was refreshed\n";

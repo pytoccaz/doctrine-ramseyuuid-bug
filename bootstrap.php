@@ -23,5 +23,9 @@ $conn = array(
     'path' => __DIR__ . '/db.sqlite',
 );
 
+
+// reference Ramsey uid as a doctrine type
+\Doctrine\DBAL\Types\Type::addType('uuid', 'Ramsey\Uuid\Doctrine\UuidType');
+
 // obtaining the entity manager
 $entityManager = EntityManager::create($conn, $config);
