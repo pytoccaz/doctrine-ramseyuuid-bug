@@ -11,12 +11,11 @@ class Author
 {  
     
     // The error pops up when @JoinColumn name attribute is eq to the entity corresponding Id.
-    // With a different name (book_id here), everything is ok    
     
     /**
      * @ORM\Id
      * @ORM\OneToOne(targetEntity="Book", inversedBy="author")
-     * @ORM\JoinColumn(name="book_id")  
+     * @ORM\JoinColumn(name="book")  
      */
     protected $book;
 
