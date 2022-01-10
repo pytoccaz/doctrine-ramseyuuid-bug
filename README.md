@@ -1,5 +1,11 @@
 # Identity through foreign Entities Bug (when identifiers are of type RamseyUuid)
 
+
+##link to opended issue
+
+@see [bug 9335](https://github.com/doctrine/orm/issues/9335#issue-1096350849)
+
+
 Please jump between tags :
 
  - `ok` no-bug case
@@ -7,11 +13,11 @@ Please jump between tags :
 
 ## sqlite schema update
 
-Before testing a case you have to reset the schema.
+Before testing a case you have to reset the DB.
 
 ``` bash
-vendor/bin/doctrine orm:schema-tool:drop --force
-vendor/bin/doctrine orm:schema-tool:update --force
+rm db.sqlite
+vendor/bin/doctrine orm:schema-tool:create
 ```
 
 ## run test
@@ -90,8 +96,8 @@ Stack trace:
   thrown in /home/olivier/work/projet/tests/doctrine/doctrine2-tutorial/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataInfo.php on line 791
 ```
 
-If you change JoinColumn name attribute with a name != "book" then it works fine. 
+If you change @JoinColumn name attribute with a name != "book" then it works fine. 
 
-If you use an auto-incremented interger Id it works. 
+If you use auto-incremented interger Ids it works as it always did. 
 
 

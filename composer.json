@@ -1,5 +1,5 @@
 { 
-  "description": "a simple project for exposing doctrine+Ramsey uuid bug",
+  "description": "a simple project to reproduce doctrine+Ramsey uuid bug",
   "require": {
     "doctrine/orm": "^2.10.2",
     "doctrine/dbal": "^3.1.1",
