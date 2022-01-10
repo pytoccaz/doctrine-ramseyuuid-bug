@@ -26,6 +26,7 @@ $conn = array(
 
 // reference Ramsey uid as a doctrine type
 \Doctrine\DBAL\Types\Type::addType('uuid', 'Ramsey\Uuid\Doctrine\UuidType');
+\Doctrine\DBAL\Types\Type::addType('ulid', 'Symfony\Bridge\Doctrine\Types\UlidType');
 
 // obtaining the entity manager
 $entityManager = EntityManager::create($conn, $config);

@@ -3,8 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use \Ramsey\Uuid\UuidInterface;
-use Ramsey\Uuid\Doctrine\UuidGenerator;
+use Symfony\Bridge\Doctrine\IdGenerator\UlidGenerator;
+use Symfony\Component\Uid\Ulid;
 
 /**
  * @ORM\Entity  
@@ -13,12 +13,12 @@ use Ramsey\Uuid\Doctrine\UuidGenerator;
 class Book
 {
     /**
-     * @var \Ramsey\Uuid\UuidInterface
+     * @var Ulid
      *
      * @ORM\Id
-     * @ORM\Column(type="uuid", unique=true)
+     * @ORM\Column(type="ulid", unique=true)
      * @ORM\GeneratedValue(strategy="CUSTOM")
-     * @ORM\CustomIdGenerator(class=UuidGenerator::class)
+     * @ORM\CustomIdGenerator(class=UlidGenerator::class)
      */
     protected $id;
 
@@ -42,7 +42,7 @@ class Book
     }
 
 
-    public function getId()
+    public function getId(): ?Ulid
     {
         return $this->id;
     }
